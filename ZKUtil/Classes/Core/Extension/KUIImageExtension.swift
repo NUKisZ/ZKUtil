@@ -1,28 +1,27 @@
 //
-//  UIImageExtension.swift
-//  ZKUtil
+//  KUIImageExtension.swift
+//  MicroVote
 //
-//  Created by 张坤 on 2019/7/24.
-//  Copyright © 2019 张坤. All rights reserved.
+//  Created by gongrong on 2018/4/18.
+//  Copyright © 2018年 张坤. All rights reserved.
 //
 
 import Foundation
-import UIKit
 extension UIImage{
-    open func getPixelColor(pos:CGPoint) -> UIColor{
-        //        let pixelData=CGDataProviderCopyData(CGImageGetDataProvider(self.cgImage!)!)
+    func getPixelColor(pos:CGPoint) -> UIColor{
+//        let pixelData=CGDataProviderCopyData(CGImageGetDataProvider(self.cgImage!)!)
         let pixelData=CGDataProvider(data: cgImage?.dataProvider as! CFData)
         let data:UnsafePointer<UInt8> = CFDataGetBytePtr((pixelData as! CFData))
         let pixelInfo: Int = ((Int(self.size.width) * Int(pos.y)) + Int(pos.x)) * 4
-
+        
         let r = CGFloat(data[pixelInfo]) / CGFloat(255.0)
         let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
         let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
         let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
-
+        
         return UIColor(red: r, green: g, blue: b, alpha: a)
     }
-    open func rotation( rotation orientation: UIImage.Orientation) -> UIImage? {
+    func rotation( rotation orientation: UIImage.Orientation) -> UIImage? {
         let image = self
         var rotate: Float = 0.0
         var rect: CGRect
@@ -69,20 +68,20 @@ extension UIImage{
         let newPic: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
         return newPic
     }
-    open func drawTextInImage(text:String)->UIImage {
+    func drawTextInImage(text:String)->UIImage {
         //开启图片上下文
         UIGraphicsBeginImageContext(self.size)
         //图形重绘
-        //        self.draw(in: CGRect.init(x: 0, y: 0, width: self.size.width, height: self.size.height))
-        //        //水印文字属性
-        //        let att = [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 10),NSAttributedStringKey.backgroundColor:UIColor.white,NSAttributedStringKey.foregroundColor:UIColor.black]
-        //        //水印文字大小
-        //        let text = NSString(string: text)
-        //        let size =  text.size(withAttributes: att)
-        //        //绘制文字
-        //        text.draw(in: CGRect.init(x: self.size.width/2, y: self.size.height/2, width: size.width, height: size.height), withAttributes: att)
-        //        //从当前上下文获取图片
-
+//        self.draw(in: CGRect.init(x: 0, y: 0, width: self.size.width, height: self.size.height))
+//        //水印文字属性
+//        let att = [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 10),NSAttributedStringKey.backgroundColor:UIColor.white,NSAttributedStringKey.foregroundColor:UIColor.black]
+//        //水印文字大小
+//        let text = NSString(string: text)
+//        let size =  text.size(withAttributes: att)
+//        //绘制文字
+//        text.draw(in: CGRect.init(x: self.size.width/2, y: self.size.height/2, width: size.width, height: size.height), withAttributes: att)
+//        //从当前上下文获取图片
+        
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         label.text = text
         label.textAlignment = .center
@@ -93,11 +92,11 @@ extension UIImage{
         let image = UIGraphicsGetImageFromCurrentImageContext()
         //关闭上下文
         UIGraphicsEndImageContext()
-
+        
         return image!
-
+        
     }
-    open func drawTextInImage(text:NSMutableAttributedString)->UIImage {
+    func drawTextInImage(text:NSMutableAttributedString)->UIImage {
         //开启图片上下文
         UIGraphicsBeginImageContext(self.size)
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
@@ -110,8 +109,8 @@ extension UIImage{
         let image = UIGraphicsGetImageFromCurrentImageContext()
         //关闭上下文
         UIGraphicsEndImageContext()
-
+        
         return image!
-
+        
     }
 }

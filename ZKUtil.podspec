@@ -86,6 +86,6 @@ end
 
 # 最后一步，打包，大功告成
 
-# pod package TestSDK.podspec --library --force    打包成.a文件。--force是指强制覆盖
+# pod package ZKUtil.podspec --library --force    打包成.a文件。--force是指强制覆盖
 
-# pod package TestSDK.podspec --force              打包成.framework文件
+# pod package ZKUtil.podspec --force              打包成.framework文件
