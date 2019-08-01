@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ZKUtil'
   # 版本要和git的tag版本一致
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   # 描述
   s.summary          = '个人使用 ZKUtil 工具.'
 
