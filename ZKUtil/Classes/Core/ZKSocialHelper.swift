@@ -11,8 +11,8 @@ import UIKit
 import WechatKit
 #endif
 struct SocialConfig {
-    static let wechatAppID = "wx1cabebf2e6d64fca"
-    static let wechatAppSecret = "64ec7d623180975e1b328e2845300505"
+    static let wechatAppID = ""
+    static let wechatAppSecret = ""
 }
 enum SocialType:Int {
     case wechat

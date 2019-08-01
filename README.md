@@ -17,12 +17,12 @@ ZKUtil is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ZKUtil'
+pod 'ZKUtil' , :git => 'https://github.com/NUKisZ/ZKUtil.git'
 ```
 
 ## Author
 
-NUKisZ, 738355248@qq.com
+NUKisZ, zhangkun.0725@gmail.com
 
 ## License
 

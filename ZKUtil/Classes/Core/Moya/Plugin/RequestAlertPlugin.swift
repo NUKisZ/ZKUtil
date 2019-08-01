@@ -8,15 +8,12 @@
 
 #if canImport(Result)
 import Result
-#endif
-#if canImport(Result)
 final class RequestAlertPlugin: PluginType{
     func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
         
         if case let .success(response) = result,response.statusCode == 200 {
             return
         }
-        Tools.showToast(toast: "网络请求失败,请稍后重试")
         if case let .success(response) = result{
             print("访问网址:\n",response.request?.url?.absoluteString ?? "url","\n错误代码",response.statusCode)
         } else if case let .failure(error) = result{

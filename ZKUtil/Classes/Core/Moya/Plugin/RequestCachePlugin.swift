@@ -10,8 +10,6 @@ public let kCacheStatusCode = 99999
 public let kNetworkChangedNotification = "kNetworkChangedNotification"
 #if canImport(Result)
 import Result
-#endif
-#if canImport(Result)
 final class RequestCachePlugin:PluginType{
     var url:String = ""
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {

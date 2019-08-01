@@ -19,6 +19,7 @@ public let kScreenWidth = UIScreen.main.bounds.size.width
 //屏幕高度
 public let kScreenHeight = UIScreen.main.bounds.size.height
 public let kScale = kScreenWidth/375
+public func kScaleWidth(width:CGFloat)->CGFloat{return kScreenWidth/375*width}
 //状态栏高度
 public let kScreenStateHeight = UIApplication.shared.statusBarFrame.size.height
 //导航栏高度
@@ -26,7 +27,19 @@ public let kScreenNavBarHeight = UINavigationController().navigationBar.frame.si
 //tabbar的高度
 public let kScreenTabbarHeight = UITabBarController().tabBar.bounds.size.height
 
-public let kScreenTabbarBottomHeight = (83-kScreenTabbarHeight > 0) ? 83-kScreenTabbarHeight :0
+public let kScreenTabbarBottomHeight = kInsets.bottom
+public let kInsets = insetss()
+private func insetss()->UIEdgeInsets{
+    var insets = UIEdgeInsets.zero
+    if #available(iOS 11.0, *){
+        insets = UIApplication.shared.delegate?.window??.safeAreaInsets ?? UIEdgeInsets.zero
+    } else {
+        insets =  UIEdgeInsets.zero
+    }
+    return insets
+
+}
+
 //获取设备名称 例如：**的手机
 public let kDeviceName = UIDevice.current.name
 //获取系统名称 例如：iPhone OS
@@ -44,10 +57,7 @@ public let kAppName = (Bundle.main.infoDictionary?["CFBundleDisplayName"])! as! 
 //public let kUserPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last?.appendingPathComponent("currentUser.arch"))!
 //public let kServerPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last?.appendingPathComponent("currentServer.arch"))!
 
-public func kScaleWidth(width:CGFloat)->CGFloat{return kScreenWidth/375*width}
 
-@available(iOS 11.0, *)
-public let kInsets = UIApplication.shared.delegate?.window??.safeAreaInsets ?? UIEdgeInsets.zero
 
 //var context = JSContext()
 //context = web?.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext?
