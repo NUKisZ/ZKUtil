@@ -31,6 +31,7 @@ TODO: Add long description of the pod here.
   # 作者信息及邮箱
   s.author           = { 'NUKisZ' => '738355248@qq.com' }
   # spec配置文件的位置
+  # s.source           = { :git =>'/Users/zhangkun/Desktop/final', :tag => '0.0.1' }
   s.source           = { :git => 'https://github.com/NUKisZ/ZKUtil.git', :tag => s.version.to_s }
   # 媒体文件
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
