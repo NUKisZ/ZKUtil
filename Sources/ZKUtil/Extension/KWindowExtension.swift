@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 extension UIWindow{
     public class func currentViewController() -> UIViewController{
         let window = UIApplication.shared.delegate?.window!

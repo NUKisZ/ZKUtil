@@ -6,7 +6,7 @@
 //  Copyright © 2018年 张坤. All rights reserved.
 //
 
-
+import UIKit
 extension UIView{
     
     public func colorOfPoint(point:CGPoint) -> UIColor {

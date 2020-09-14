@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
   # 工程依赖系统版本
   s.ios.deployment_target = '8.0'
   # 源文件 包含 h,m
-  s.source_files = 'ZKUtil/Classes/**/*'
+  s.source_files = 'Sources/ZKUtil/**/*'
 
   # 资源文件 .png/.bundle等(多个)
   # s.resource_bundles = {

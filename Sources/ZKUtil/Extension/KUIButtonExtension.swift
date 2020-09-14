@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 extension UIButton{
     @objc public func set(image anImage: UIImage?, title: String,
                    titlePosition: UIView.ContentMode, additionalSpacing: CGFloat, state: UIControl.State){

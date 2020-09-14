@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 extension UIImage{
     public func getPixelColor(pos:CGPoint) -> UIColor{
 //        let pixelData=CGDataProviderCopyData(CGImageGetDataProvider(self.cgImage!)!)

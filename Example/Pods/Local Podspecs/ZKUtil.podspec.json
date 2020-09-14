@@ -18,7 +18,7 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ZKUtil/Classes/**/*",
+  "source_files": "Sources/ZKUtil/**/*",
   "static_framework": true,
   "swift_versions": "5.2",
   "swift_version": "5.2"

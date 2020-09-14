@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 extension UITableView{
     public func scrollToBottom() {
         let section = self.numberOfSections - 1

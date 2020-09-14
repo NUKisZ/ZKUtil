@@ -41,7 +41,7 @@ class Tools: NSObject {
         return String(format: hash as String)
     }
     
-    open static func labelLineSpace(lineSpace:CGFloat=5,title:String) -> NSMutableAttributedString{
+    public static func labelLineSpace(lineSpace:CGFloat=5,title:String) -> NSMutableAttributedString{
         let paraph = NSMutableParagraphStyle()
         //将行间距设置为28
         paraph.lineSpacing = lineSpace
@@ -54,7 +54,7 @@ class Tools: NSObject {
     }
     
     
-    open static func getUsedSSID() -> String{
+    public static func getUsedSSID() -> String{
         let interfaces = CNCopySupportedInterfaces()
         var ssid = "无"
         if interfaces != nil {
@@ -73,7 +73,7 @@ class Tools: NSObject {
         }
         return ssid
     }
-    open static func GetIPAddresses() -> String? {
+    public static func GetIPAddresses() -> String? {
         var addresses = [String]()
         
         var ifaddr : UnsafeMutablePointer<ifaddrs>? = nil
@@ -110,7 +110,7 @@ class Tools: NSObject {
 //            return UUID!
 //        }
 //    }
-    open static func dnsToIP(domainName: String) -> String {
+    public static func dnsToIP(domainName: String) -> String {
         var result = ""
         let host = CFHostCreateWithName(nil,domainName as CFString).takeRetainedValue()
         CFHostStartInfoResolution(host, .addresses, nil)
@@ -126,7 +126,7 @@ class Tools: NSObject {
         }
         return result
     }
-    open static func showAlert(vc:UIViewController,title:String?,message:String?,actionTitle:String?,handle: ((UIAlertAction)->Void)?,canceTitle:String?){
+    public static func showAlert(vc:UIViewController,title:String?,message:String?,actionTitle:String?,handle: ((UIAlertAction)->Void)?,canceTitle:String?){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: actionTitle, style: .default, handler: handle)
         alert.addAction(action)
@@ -137,7 +137,7 @@ class Tools: NSObject {
         vc.present(alert, animated: true, completion: nil)
     }
     //根据后缀获取对应的Mime-Type
-    open static  func mimeType(pathExtension: String) -> String {
+    public static  func mimeType(pathExtension: String) -> String {
         if let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
                                                            pathExtension as NSString,
                                                            nil)?.takeRetainedValue() {
@@ -151,7 +151,7 @@ class Tools: NSObject {
     }
     //MARK:获取本地Documents路径
     ///获取本地Documents路径
-    open static  func getDocumentsDirUrl(string:String)->URL{
+    public static  func getDocumentsDirUrl(string:String)->URL{
         do{
             let documentsDir = try FileManager.default.url(for:.documentDirectory, in:.userDomainMask, appropriateFor:nil, create:true)
             let fileURL = URL(string:string, relativeTo:documentsDir)!
@@ -161,7 +161,7 @@ class Tools: NSObject {
         }
     }
     ///label高度
-    open static func textHeight(_ text: String, width: CGFloat, font:UIFont) -> CGFloat {
+    public static func textHeight(_ text: String, width: CGFloat, font:UIFont) -> CGFloat {
         let constrainedSize = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
         let attributes = [ NSAttributedString.Key.font: font ]
         let options: NSStringDrawingOptions = [.usesFontLeading, .usesLineFragmentOrigin]
@@ -179,7 +179,7 @@ class Tools: NSObject {
     
     /// 是否设置了代理
     /// - Returns: true 代理了 false 没有设置代理
-    open static func getProxyStatus() -> Bool{
+    public static func getProxyStatus() -> Bool{
         let dic = CFNetworkCopySystemProxySettings()!.takeUnretainedValue()
         let arr = CFNetworkCopyProxiesForURL(URL(string: "https://www.baidu.com")! as CFURL, dic).takeUnretainedValue()
         
@@ -204,7 +204,7 @@ class Tools: NSObject {
     
     /// 检查设备是否越狱
     /// - Returns: true false
-    open static func isJailbroken() -> Bool {
+    public static func isJailbroken() -> Bool {
         // 检查是否存在越狱常用文件
         let jailFilePaths = [
             "/Applications/Cydia.app",

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 private struct FontCustomType{
     static let PingFangSCMedium    = "PingFangSC-Medium"
     static let PingFangSCSemibold  = "PingFangSC-Semibold"
