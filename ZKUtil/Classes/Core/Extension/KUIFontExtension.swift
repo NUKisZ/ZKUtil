@@ -22,13 +22,25 @@ private struct FontCustomType{
     static let RobotoLight         = "Roboto-Light"
 }
 extension UIFont{
-    //系统字体库
+    /// 系统字体库
+    
+    /// 常规的
+    /// - Parameter size: 字体大小
+    /// - Returns: 字体
     public class func PingFangSCRegular(size:CGFloat) -> UIFont{
         return UIFont(name: FontCustomType.PingFangSCRegular, size: size)!
     }
+    
+    /// 粗体的
+    /// - Parameter size: 字体大小
+    /// - Returns: 字体
     public class func PingFangSCSemibold(size:CGFloat) -> UIFont{
         return UIFont(name: FontCustomType.PingFangSCSemibold, size: size)!
     }
+    
+    /// 中等加粗
+    /// - Parameter size: 字体大小
+    /// - Returns: 字体
     public class func PingFangSCMedium(size:CGFloat) -> UIFont{
         return UIFont(name: FontCustomType.PingFangSCMedium, size: size)!
     }

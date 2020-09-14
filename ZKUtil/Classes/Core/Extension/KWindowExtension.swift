@@ -26,4 +26,11 @@ extension UIWindow{
         }
         return topViewController
     }
+    public static var frontWindow: UIWindow? {
+        return UIApplication.shared.windows.reversed().first(where: {
+            $0.screen == UIScreen.main &&
+                !$0.isHidden && $0.alpha > 0 &&
+                $0.windowLevel == UIWindow.Level.normal
+        })
+    }
 }

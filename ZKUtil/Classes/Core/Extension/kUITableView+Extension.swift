@@ -8,7 +8,7 @@
 
 import Foundation
 extension UITableView{
-    func scrollToBottom() {
+    public func scrollToBottom() {
         let section = self.numberOfSections - 1
         let row = self.numberOfRows(inSection: section) - 1
         if section < 0 || row < 0 {
@@ -24,7 +24,7 @@ extension UITableView{
  - parameter tableView: tableView
  - parameter cell:      要注册的类名
  */
-func regClass(_ tableView:UITableView , cell:AnyClass)->Void {
+public func regClass(_ tableView:UITableView , cell:AnyClass)->Void {
     tableView.register( cell, forCellReuseIdentifier: "\(cell)");
 }
 /**
@@ -37,7 +37,7 @@ func regClass(_ tableView:UITableView , cell:AnyClass)->Void {
 
  - returns: 传入Cell类型的 实例对象
  */
-func getCell<T: UITableViewCell>(_ tableView:UITableView ,cell: T.Type ,indexPath:IndexPath) -> T {
+public func getCell<T: UITableViewCell>(_ tableView:UITableView ,cell: T.Type ,indexPath:IndexPath) -> T {
     return tableView.dequeueReusableCell(withIdentifier: "\(cell)", for: indexPath) as! T ;
 }
 /**
@@ -49,7 +49,7 @@ func getCell<T: UITableViewCell>(_ tableView:UITableView ,cell: T.Type ,indexPat
  - parameter style:     类型
  - returns: 传入Cell类型的 实例对象
  */
-func getCell<T: UITableViewCell>(_ tableView:UITableView,cell:T.Type ,style:UITableViewCell.CellStyle = .default,identifier:String) -> T {
+public func getCell<T: UITableViewCell>(_ tableView:UITableView,cell:T.Type ,style:UITableViewCell.CellStyle = .default,identifier:String) -> T {
     var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? T
     if cell == nil{
         cell = T(style: style, reuseIdentifier: identifier)

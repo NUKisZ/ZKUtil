@@ -8,7 +8,7 @@
 
 import Foundation
 extension UIButton{
-    @objc func set(image anImage: UIImage?, title: String,
+    @objc public func set(image anImage: UIImage?, title: String,
                    titlePosition: UIView.ContentMode, additionalSpacing: CGFloat, state: UIControl.State){
         self.imageView?.contentMode = .center
         self.setImage(anImage, for: state)

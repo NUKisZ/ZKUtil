@@ -87,6 +87,9 @@ end
 
 # git tag -a 版本号 -m'v版本号'
 
+# 上传到github
+# git push origin master
+
 # 最后一步，打包，大功告成
 
 # pod package ZKUtil.podspec --library --force    打包成.a文件。--force是指强制覆盖

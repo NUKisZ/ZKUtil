@@ -8,7 +8,8 @@
 
 
 extension UIView{
-    func colorOfPoint(point:CGPoint) -> UIColor {
+    
+    public func colorOfPoint(point:CGPoint) -> UIColor {
         
         var pixel: [CUnsignedChar] = [0, 0, 0, 0]
         
@@ -30,7 +31,7 @@ extension UIView{
         
         return color
     }
-    func colorOfPoint(point:CGPoint) -> CGFloat {
+    public func colorOfPoint(point:CGPoint) -> CGFloat {
         
         var pixel: [CUnsignedChar] = [0, 0, 0, 0]
         
@@ -51,4 +52,20 @@ extension UIView{
         return red + green + blue + alpha
     }
     
+    /// UIView，便捷获取 frame.size.width 值
+    public var width: CGFloat {
+        return self.frame.size.width
+    }
+    /// UIView，便捷获取 frame.size.height 值
+    public var height: CGFloat {
+        return self.frame.size.height
+    }
+    /// UIView，便捷获取 frame.origin.x 值
+    public var x: CGFloat {
+        return self.frame.origin.x
+    }
+    /// UIView，便捷获取 frame.origin.y 值
+    public var y: CGFloat {
+        return self.frame.origin.y
+    }
 }

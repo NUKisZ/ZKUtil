@@ -9,7 +9,7 @@
 import Foundation
 extension UserDefaults {
     //应用第一次启动
-    static func isFirstLaunch() -> Bool {
+    public static func isFirstLaunch() -> Bool {
         let hasBeenLaunched = "hasBeenLaunched"
         let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunched)
         if isFirstLaunch {
@@ -20,7 +20,7 @@ extension UserDefaults {
     }
     
     //当前版本第一次启动
-    static func isFirstLaunchOfNewVersion() -> Bool {
+    public static func isFirstLaunchOfNewVersion() -> Bool {
         //主程序版本号
         let infoDictionary = Bundle.main.infoDictionary!
         let majorVersion = infoDictionary["CFBundleShortVersionString"] as! String

@@ -9,6 +9,8 @@
 import UIKit
 import CommonCrypto
 extension String {
+    
+    /// 字符串md5
     public var md5:String{
         let str = self.cString(using: String.Encoding.utf8)
         let strLen = CC_LONG(self.lengthOfBytes(using: String.Encoding.utf8))
@@ -25,6 +27,8 @@ extension String {
         
         return String(format: hash as String)
     }
+    
+    /// 字符串是否是ip地址
     public var isIP:Bool{
         
         let ipArray = self.components(separatedBy: ".")
@@ -38,5 +42,16 @@ extension String {
             return true
         }
         return false
+    }
+    
+    /// 本地化语言
+    public var localized:String{
+        return NSLocalizedString(self, comment: self)
+    }
+    
+    public func size(font: UIFont, size: CGSize) -> CGSize {
+        let attribute = [ NSAttributedString.Key.font: font ]
+        let conten = NSString(string: self)
+        return conten.boundingRect(with: CGSize(width: size.width, height: size.height), options: .usesLineFragmentOrigin, attributes: attribute, context: nil).size
     }
 }

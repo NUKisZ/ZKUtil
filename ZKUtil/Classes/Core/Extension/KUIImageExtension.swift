@@ -8,7 +8,7 @@
 
 import Foundation
 extension UIImage{
-    func getPixelColor(pos:CGPoint) -> UIColor{
+    public func getPixelColor(pos:CGPoint) -> UIColor{
 //        let pixelData=CGDataProviderCopyData(CGImageGetDataProvider(self.cgImage!)!)
         let pixelData=CGDataProvider(data: cgImage?.dataProvider as! CFData)
         let data:UnsafePointer<UInt8> = CFDataGetBytePtr((pixelData as! CFData))
@@ -21,7 +21,7 @@ extension UIImage{
         
         return UIColor(red: r, green: g, blue: b, alpha: a)
     }
-    func rotation( rotation orientation: UIImage.Orientation) -> UIImage? {
+    public func rotation( rotation orientation: UIImage.Orientation) -> UIImage? {
         let image = self
         var rotate: Float = 0.0
         var rect: CGRect
@@ -68,7 +68,7 @@ extension UIImage{
         let newPic: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
         return newPic
     }
-    func drawTextInImage(text:String)->UIImage {
+    public func drawTextInImage(text:String)->UIImage {
         //开启图片上下文
         UIGraphicsBeginImageContext(self.size)
         //图形重绘
@@ -96,7 +96,7 @@ extension UIImage{
         return image!
         
     }
-    func drawTextInImage(text:NSMutableAttributedString)->UIImage {
+    public func drawTextInImage(text:NSMutableAttributedString)->UIImage {
         //开启图片上下文
         UIGraphicsBeginImageContext(self.size)
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
