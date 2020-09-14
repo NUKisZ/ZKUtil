@@ -10,7 +10,7 @@ import UIKit
 #if canImport(DeviceKit)
 import DeviceKit
 //获取设备的型号 例如：iPhone
-public let kDeviceModel = Device() // UIDevice.current.model
+public let kDeviceModel = Device.current // UIDevice.current.model
 #endif
 public let kUserDefaults = UserDefaults.standard
 
