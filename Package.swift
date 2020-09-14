@@ -29,6 +29,7 @@ let package = Package(
         // 第三方有良好的版本格式: 大版本.小版本.测试版本
         // 就可以直接用这个
         .package(url: "https://github.com/SnapKit/SnapKit.git", from: .init(5, 0, 1)),
+        .package(url: "https://github.com/devicekit/DeviceKit.git", from:.init(4, 0, 0))
         
         // 如果第三方版本格式, 是其他的, 例如 1.2, 根本没用第三位, 那么我们也可以这样, 直接传入字符串
         // .package(url: "https://github.com/SnapKit/SnapKit.git", from: .init(stringLiteral: "5.0.1")),
