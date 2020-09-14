@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ZKUtil'
   # 版本要和git的tag版本一致
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   # 描述
   s.summary          = '个人使用 ZKUtil 工具.'
 
@@ -20,10 +20,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+                        私有Pods测试
+                        * Markdown 格式
+                        DESC
+#TODO: Add long description of the pod here.
+#                       DESC
 # 主页信息网址
-  s.homepage         = 'https://github.com/NUKisZ/ZKUtil'
+  s.homepage         = 'https://blog.uilucky.com'
   # 截图地址
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   # 证书 一般用下面的格式 如果用了其他的格式 需要相应的修改
@@ -63,7 +66,7 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   # 第三方开源框架(多个)
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.swift_version = '5.0'
+  s.swift_version = '5.2'
   # 系统类库(多个) 注意:系统类库不需要写全名 去掉开头的lib
   # s.libraries = 'stdc++'
 end

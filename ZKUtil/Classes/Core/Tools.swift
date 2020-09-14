@@ -176,4 +176,79 @@ class Tools: NSObject {
 //        }
 //        return time
 //    }
+    
+    /// 是否设置了代理
+    /// - Returns: true 代理了 false 没有设置代理
+    static func getProxyStatus() -> Bool{
+        let dic = CFNetworkCopySystemProxySettings()!.takeUnretainedValue()
+        let arr = CFNetworkCopyProxiesForURL(URL(string: "https://www.baidu.com")! as CFURL, dic).takeUnretainedValue()
+        
+        let obj = (arr as [AnyObject])[0]
+        
+        let host = obj.object(forKey: kCFProxyHostNameKey) ?? "null"
+        let port = obj.object(forKey: kCFProxyPortNumberKey) ?? "null"
+        let type = obj.object(forKey: kCFProxyTypeKey) ?? "null"
+        
+//        print(host)
+//        print(port)
+//        print(type)
+        
+        if obj.object(forKey: kCFProxyTypeKey) == kCFProxyTypeNone {
+//            print("没有设置代理")
+            return false
+        } else {
+//            print("设置代理了")
+            return true
+        }
+    }
+    
+    /// 检查设备是否越狱
+    /// - Returns: true false
+    static func isJailbroken() -> Bool {
+        // 检查是否存在越狱常用文件
+        let jailFilePaths = [
+            "/Applications/Cydia.app",
+            "/Library/MobileSubstrate/MobileSubstrate.dylib",
+            "/bin/bash",
+            "/usr/sbin/sshd",
+            "/etc/apt"
+        ]
+        for filePath in jailFilePaths {
+            if FileManager.default.fileExists(atPath: filePath) {
+                return true
+            }
+        }
+
+        // 检查是否安装了越狱工具Cydia
+        if let url = URL(string: "cydia://package/com.example.package") {
+            if UIApplication.shared.canOpenURL(url) {
+                return true
+            }
+        }
+        // 检查是否有权限读取系统应用列表
+        if FileManager.default.fileExists(atPath: "/User/Applications/") {
+            var applist: [String]? = nil
+            do {
+                applist = try FileManager.default.contentsOfDirectory(
+                    atPath: "/User/Applications/")
+            } catch {
+            }
+            print("applist = \(applist ?? [])")
+            return true
+        }
+        //  检测当前程序运行的环境变量
+        let env = getenv("DYLD_INSERT_LIBRARIES")
+        print(env as Any)
+        if env != nil{
+            return true
+        }
+
+//        //  检测当前程序运行的环境变量
+//        let env = (getenv("DYLD_INSERT_LIBRARIES") as NSString).utf8String
+//        if env != nil {
+//            return true
+//        }
+
+        return false
+    }
 }

@@ -1,9 +1,9 @@
 {
   "name": "ZKUtil",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "summary": "个人使用 ZKUtil 工具.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/NUKisZ/ZKUtil",
+  "description": "私有Pods测试\n* Markdown 格式",
+  "homepage": "https://blog.uilucky.com",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -13,13 +13,13 @@
   },
   "source": {
     "git": "https://github.com/NUKisZ/ZKUtil.git",
-    "tag": "0.0.1"
+    "tag": "0.0.3"
   },
   "platforms": {
     "ios": "8.0"
   },
   "source_files": "ZKUtil/Classes/**/*",
   "static_framework": true,
-  "swift_versions": "5.0",
-  "swift_version": "5.0"
+  "swift_versions": "5.2",
+  "swift_version": "5.2"
 }
