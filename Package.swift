@@ -29,7 +29,16 @@ let package = Package(
         // 第三方有良好的版本格式: 大版本.小版本.测试版本
         // 就可以直接用这个
         .package(url: "https://github.com/SnapKit/SnapKit.git", from: .init(5, 0, 1)),
-        .package(url: "https://github.com/devicekit/DeviceKit.git", from:.init(4, 0, 0))
+        .package(url: "https://github.com/devicekit/DeviceKit.git", from:.init(4, 0, 0)),
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "5.0.0")),
+        .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "14.0.0")),
+        .package(url: "https://github.com/HeroTransitions/Hero.git", .upToNextMajor(from: "1.4.0")),
+        .package(url: "https://github.com/malcommac/SwiftDate.git", .upToNextMajor(from: "6.3.1")),
+        .package(url: "https://github.com/SwifterSwift/SwifterSwift", .upToNextMajor(from: "5.2.0")),
+        .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", .upToNextMajor(from: "5.0.0")),
+//        .package(url: "https://github.com/scalessec/Toast-Swift", .upToNextMajor(from: "5.0.1")),
+//        .package(url: "https://github.com/hackiftekhar/IQKeyboardManager.git", .upToNextMajor(from: "6.5.6")),
+        .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack.git", .upToNextMajor(from: "3.7.0")),
         
         // 如果第三方版本格式, 是其他的, 例如 1.2, 根本没用第三位, 那么我们也可以这样, 直接传入字符串
         // .package(url: "https://github.com/SnapKit/SnapKit.git", from: .init(stringLiteral: "5.0.1")),
@@ -48,7 +57,7 @@ let package = Package(
             name: "ZKUtil",
             dependencies: [
                 // 你关联的第三方
-                "SnapKit",
+                "SnapKit", "RxSwift","DeviceKit","Moya","Hero","SwiftDate","SwifterSwift","SwiftyJSON","CocoaLumberjack",
             ]),
         // 测试的 target
         .testTarget(

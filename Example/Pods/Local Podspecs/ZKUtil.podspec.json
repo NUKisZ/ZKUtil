@@ -1,6 +1,6 @@
 {
   "name": "ZKUtil",
-  "version": "0.0.3",
+  "version": "0.0.10",
   "summary": "个人使用 ZKUtil 工具.",
   "description": "私有Pods测试\n* Markdown 格式",
   "homepage": "https://blog.uilucky.com",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/NUKisZ/ZKUtil.git",
-    "tag": "0.0.3"
+    "tag": "0.0.10"
   },
   "platforms": {
     "ios": "8.0"

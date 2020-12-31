@@ -17,12 +17,11 @@ import UIKit
 #elseif os(macOS)
 import AppKit
 #endif
-
 // Two way binding operator between control property and relay, that's all it takes.
 
 infix operator <-> : DefaultPrecedence
 
-#if os(iOS) && canImport(RxSwift)
+#if os(iOS) && canImport(RxSwift) && canImport(RxCocoa)
 func nonMarkedText(_ textInput: UITextInput) -> String? {
     let start = textInput.beginningOfDocument
     let end = textInput.endOfDocument
@@ -76,7 +75,7 @@ func <-> <Base>(textInput: TextInput<Base>, relay: BehaviorRelay<String>) -> Dis
     return Disposables.create(bindToUIDisposable, bindToRelay)
 }
 #endif
-#if canImport(RxSwift)
+#if canImport(RxSwift) && canImport(RxCocoa)
 func <-> <T>(property: ControlProperty<T>, relay: BehaviorRelay<T>) -> Disposable {
     if T.self == String.self {
 #if DEBUG && !os(macOS)
