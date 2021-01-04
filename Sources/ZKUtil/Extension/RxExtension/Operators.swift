@@ -5,23 +5,20 @@
 //  Created by Krunoslav Zaher on 12/6/15.
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
-
-#if canImport(RxSwift)
+#if canImport(RxCocoa) && canImport(RxSwift)
 import RxSwift
-#endif
-#if canImport(RxCocoa)
 import RxCocoa
-#endif
 #if os(iOS)
 import UIKit
 #elseif os(macOS)
 import AppKit
 #endif
+
 // Two way binding operator between control property and relay, that's all it takes.
 
 infix operator <-> : DefaultPrecedence
 
-#if os(iOS) && canImport(RxSwift) && canImport(RxCocoa)
+#if os(iOS)
 func nonMarkedText(_ textInput: UITextInput) -> String? {
     let start = textInput.beginningOfDocument
     let end = textInput.endOfDocument
@@ -36,7 +33,7 @@ func nonMarkedText(_ textInput: UITextInput) -> String? {
     }
 
     guard let startRange = textInput.textRange(from: start, to: markedTextRange.start),
-        let endRange = textInput.textRange(from: markedTextRange.end, to: end) else {
+          let endRange = textInput.textRange(from: markedTextRange.end, to: end) else {
         return text
     }
 
@@ -57,7 +54,7 @@ func <-> <Base>(textInput: TextInput<Base>, relay: BehaviorRelay<String>) -> Dis
             /**
              In some cases `textInput.textRangeFromPosition(start, toPosition: end)` will return nil even though the underlying
              value is not nil. This appears to be an Apple bug. If it's not, and we are doing something wrong, please let us know.
-             The can be reproed easily if replace bottom code with 
+             The can be reproed easily if replace bottom code with
              
              if nonMarkedTextValue != relay.value {
                 relay.accept(nonMarkedTextValue ?? "")
@@ -75,7 +72,7 @@ func <-> <Base>(textInput: TextInput<Base>, relay: BehaviorRelay<String>) -> Dis
     return Disposables.create(bindToUIDisposable, bindToRelay)
 }
 #endif
-#if canImport(RxSwift) && canImport(RxCocoa)
+
 func <-> <T>(property: ControlProperty<T>, relay: BehaviorRelay<T>) -> Disposable {
     if T.self == String.self {
 #if DEBUG && !os(macOS)

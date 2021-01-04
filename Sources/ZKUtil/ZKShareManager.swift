@@ -79,7 +79,7 @@ class ZKShareManager: NSObject {
                 let image = UIImage(contentsOfFile: pat)
                 let attributedStrM : NSMutableAttributedString = NSMutableAttributedString()
                 let att1 = NSAttributedString(string: title! + "\n", attributes: [ NSAttributedStringKey.backgroundColor : UIColor.clear,NSAttributedStringKey.foregroundColor : UIColor.red, NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 120)])
-                let att2 = NSAttributedString(string: "我在免费使用JBVPN加速，极速畅享国内外网络，使用邀请码", attributes: [ NSAttributedStringKey.backgroundColor : UIColor.clear,NSAttributedStringKey.foregroundColor : UIColor.black, NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 120)])
+                let att2 = NSAttributedString(string: "我在免费使用，使用邀请码", attributes: [ NSAttributedStringKey.backgroundColor : UIColor.clear,NSAttributedStringKey.foregroundColor : UIColor.black, NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 120)])
                 let att3 = NSAttributedString(string: title!, attributes: [ NSAttributedStringKey.backgroundColor : UIColor.clear,NSAttributedStringKey.foregroundColor : UIColor.red, NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 120)])
                 let att4 = NSAttributedString(string: "激活，可获取5天免费时长哦~", attributes: [ NSAttributedStringKey.backgroundColor : UIColor.clear,NSAttributedStringKey.foregroundColor : UIColor.black, NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 120)])
                 attributedStrM.append(att1)

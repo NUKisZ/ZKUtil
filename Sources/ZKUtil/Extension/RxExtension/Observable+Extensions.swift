@@ -6,14 +6,11 @@
 //  Copyright © 2017 Krunoslav Zaher. All rights reserved.
 //
 
-#if canImport(RxSwift)
-import RxSwift
-#endif
-#if canImport(RxCocoa)
-import RxCocoa
-#endif
-// taken from RxFeedback repo
 #if canImport(RxCocoa) && canImport(RxSwift)
+import RxSwift
+import RxCocoa
+// taken from RxFeedback repo
+
 
 
 extension ObservableType where Element == Any {
