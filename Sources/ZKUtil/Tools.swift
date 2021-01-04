@@ -189,9 +189,11 @@ class Tools: NSObject {
         let port = obj.object(forKey: kCFProxyPortNumberKey) ?? "null"
         let type = obj.object(forKey: kCFProxyTypeKey) ?? "null"
         
-//        print(host)
-//        print(port)
-//        print(type)
+        #if DEBUG
+        print(host)
+        print(port)
+        print(type)
+        #endif
         
         if obj.object(forKey: kCFProxyTypeKey) == kCFProxyTypeNone {
 //            print("没有设置代理")
