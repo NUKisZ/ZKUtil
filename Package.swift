@@ -36,9 +36,11 @@ let package = Package(
         .package(url: "https://github.com/malcommac/SwiftDate.git", .upToNextMajor(from: "6.3.1")),
         .package(url: "https://github.com/SwifterSwift/SwifterSwift", .upToNextMajor(from: "5.2.0")),
         .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", .upToNextMajor(from: "5.0.0")),
+        .package(url: "https://github.com/tristanhimmelman/ObjectMapper.git", .upToNextMajor(from: "4.1.0")),
 //        .package(url: "https://github.com/scalessec/Toast-Swift", .upToNextMajor(from: "5.0.1")),
 //        .package(url: "https://github.com/hackiftekhar/IQKeyboardManager.git", .upToNextMajor(from: "6.5.6")),
         .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack.git", .upToNextMajor(from: "3.7.0")),
+        .package(url: "https://github.com/onevcat/Kingfisher.git", .upToNextMajor(from: "6.0.0"))
         
         // 如果第三方版本格式, 是其他的, 例如 1.2, 根本没用第三位, 那么我们也可以这样, 直接传入字符串
         // .package(url: "https://github.com/SnapKit/SnapKit.git", from: .init(stringLiteral: "5.0.1")),
@@ -57,7 +59,7 @@ let package = Package(
             name: "ZKUtil",
             dependencies: [
                 // 你关联的第三方
-                "SnapKit", "RxSwift","DeviceKit","Moya","Hero","SwiftDate","SwifterSwift","SwiftyJSON","CocoaLumberjack",
+                "SnapKit", "RxSwift","DeviceKit","Moya","Hero","SwiftDate","SwifterSwift","SwiftyJSON","CocoaLumberjack","Kingfisher"
             ]),
         // 测试的 target
         .testTarget(

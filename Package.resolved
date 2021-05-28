@@ -33,8 +33,17 @@
         "repositoryURL": "https://github.com/HeroTransitions/Hero.git",
         "state": {
           "branch": null,
-          "revision": "ae951b89f23485de8a7b95aaa5cead7f78ab1df0",
+          "revision": "36c74ac138eede7dd7b31ea6b9139805deef3a39",
           "version": "1.5.0"
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
+        "state": {
+          "branch": null,
+          "revision": "5840cfe0d4a942be41c1cb8a325cc27dd50be1e4",
+          "version": "6.0.0"
         }
       },
       {
@@ -44,6 +53,15 @@
           "branch": null,
           "revision": "b3e5a233e0d85fd4d69f561c80988590859c7dee",
           "version": "14.0.0"
+        }
+      },
+      {
+        "package": "ObjectMapper",
+        "repositoryURL": "https://github.com/tristanhimmelman/ObjectMapper.git",
+        "state": {
+          "branch": null,
+          "revision": "0b96a734de3ea1c87374ae677064f86adb0716ec",
+          "version": "4.2.0"
         }
       },
       {
